@@ -54,3 +54,18 @@ function formatTime(time) {
 
 let currentTime = document.querySelector("li#time");
 currentTime.innerHTML = formatTime(now);
+
+function searchCity(city) {
+  let apiKey = "07b4c9439e97bc1f2dad7f2fe9fb8fca";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-search-input").value;
+  searchCity(city);
+}
+
+let searchForm = document.querySelector("#city-search-form");
+searchForm.addEventListener("submit", handleSubmit);
