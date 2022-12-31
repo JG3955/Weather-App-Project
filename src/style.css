@@ -43,3 +43,50 @@ p {
   border-radius: 10px;
   padding-right: 25px;
 }
+.current-high-low {
+  font-size: 28px;
+  padding-top: 30px;
+}
+.humidity-wind {
+  font-size: 16px;
+  padding-top: 40px;
+}
+.current-city {
+  padding-top: 10px;
+  padding-left: 28px;
+}
+.current-date-time {
+  font-size: 16px;
+  padding: 0, 5px;
+}
+.moon-icon {
+  max-width: 80%;
+  margin: 0;
+  padding-top: 15px;
+}
+.grid {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 100%;
+  padding-top: 30px;
+}
+.weather-icons {
+  max-width: 75%;
+  padding: 5px, 0;
+}
+.sun-icon {
+  max-width: 65%;
+}
+
+.forecast-temps {
+  font-size: 14px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  border-left: 4px solid rgba(0, 0, 0, 0.7);
+}
+.days-temps {
+  padding-top: 10px;
+}
+.temps {
+  font-size: 13px;
+}
