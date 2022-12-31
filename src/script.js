@@ -97,3 +97,5 @@ function handleSubmit(event) {
 
 let searchForm = document.querySelector("#city-search-form");
 searchForm.addEventListener("submit", handleSubmit);
+
+searchCity("Austin");
