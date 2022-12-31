@@ -55,6 +55,34 @@ function formatTime(time) {
 let currentTime = document.querySelector("li#time");
 currentTime.innerHTML = formatTime(now);
 
+function displayWeatherCondition(response) {
+  document.querySelector("#current-city").innerHTML = response.data.name;
+  document.querySelector("#current-temp").innerHTML = Math.round(
+    response.data.main.temp
+  );
+
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind-speed").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+
+  document.querySelector("#current-high").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
+  document.querySelector("#current-low").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
+
+  document.querySelector("#current-conditions").innerHTML =
+    response.data.weather[0].main;
+}
+
+function searchCity(city) {
+  let apiKey = "07b4c9439e97bc1f2dad7f2fe9fb8fca";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
 function searchCity(city) {
   let apiKey = "07b4c9439e97bc1f2dad7f2fe9fb8fca";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
