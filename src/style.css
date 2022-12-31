@@ -13,6 +13,29 @@ footer {
   padding-top: 15px;
   padding-bottom: 5px;
 }
+form {
+  max-width: 100%;
+  padding: 5px;
+}
+
+h1 {
+  font-size: 32px;
+  text-transform: capitalize;
+}
+h2 {
+  display: inline;
+  font-size: 35px;
+}
+ul {
+  list-style: none;
+  text-align: left;
+}
+
+p {
+  padding-left: 20px;
+  padding-top: 15px;
+  font-size: 20px;
+}
 .container {
   color: rgba(0, 0, 0, 0.7);
   width: 80%;
