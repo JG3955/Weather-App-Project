@@ -11,122 +11,127 @@
       rel="stylesheet"
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
-    /> 
+    />
     <link rel="stylesheet" href="src/style.css" />
-     
   </head>
   <body>
     <div class="container">
-      <form id="city-search-form">
+      <div class="weather-container">
+        <form id="city-search-form">
+          <div class="row">
+            <div class="col-sm-6">
+              <input
+                id="city-search-input"
+                class="form-control"
+                placeholder="enter a city"
+                autocomplete="off"
+                autofocus="on"
+                type="text"
+              />
+            </div>
+            <div class="col-sm-3 search-button text-center">
+              <input
+                type="submit"
+                value="search"
+                class="form-control btn btn-primary shadow-sm"
+              />
+            </div>
+            <div class="col-md-3 search-button text-center">
+              <button
+                type="button"
+                id="current-location-button"
+                class="btn btn-outline-primary w-100"
+              >
+                current
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="current-city">
+              <h1 id="current-city"></h1>
+              <h2 id="current-temp"><strong></strong></h2>
+              <span class="degrees-c" id="celsius-link">˚C</span>
+            </div>
+            <div class="current-date-time">
+              <ul>
+                <li id="day"></li>
+                <li id="month-date-year"></li>
+                <li id="time"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card-body">
+              <img src="images/moon-icon.png" class="moon-icon" />
+              <p id="current-conditions"></p>
+            </div>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-sm-6">
-            <input
-              id="city-search-input"
-              class="form-control"
-              placeholder="enter a city"
-              autocomplete="off"
-              autofocus="on"
-              type="text"
-            />
-          </div>
-          <div class="col-sm-3 search-button text-center">
-            <input
-              type="submit"
-              value="search"
-              class="form-control btn btn-primary shadow-sm"
-            />
-          </div>
-          <div class="col-md-3 search-button text-center">
-            <button
-              type="button"
-              id="current-location-button"
-              class="btn btn-outline-primary w-100"
-            >
-              current
-            </button>
-          </div>
-        </div>
-      </form>
-
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="current-city">
-            <h1 id="current-city"></h1>
-            <h2 id="current-temp"><strong></strong></h2>
-            <span class="degrees-c" id="celsius-link">˚C</span>
-          </div>
-          <div class="current-date-time">
             <ul>
-              <li id="day"></li>
-              <li id="month-date-year"></li>
-              <li id="time"></li>
+              <li class="current-high-low">
+                <strong><span id="current-high"></span>˚ | </strong>
+                <span id="current-low"></span>˚
+              </li>
+              <li class="humidity-wind">
+                Humidity: <span id="humidity"></span>%
+              </li>
+              <li class="humidity-wind">
+                Wind: <span id="wind-speed"></span>m/s
+              </li>
             </ul>
           </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card-body">
-            <img src="images/moon-icon.png" class="moon-icon" />
-            <p id="current-conditions"></p>
+          <div class="col-sm-4 forecast-temps">
+            <ul class="text-center">
+              <li class="days-temps">
+                Sun <br />
+                <span class="temps"><strong> 79˚ </strong>| 55˚</span>
+              </li>
+              <li class="days-temps">
+                Mon <br />
+                <span class="temps"><strong> 74˚| </strong>67˚</span>
+              </li>
+              <li class="days-temps">
+                Tue <br />
+                <span class="temps"><strong> 82˚| </strong>62˚</span>
+              </li>
+              <li class="days-temps">
+                Wed <br />
+                <span class="temps"><strong> 64˚| </strong>47˚</span>
+              </li>
+              <li class="days-temps">
+                Thu <br />
+                <span class="temps"><strong> 63˚| </strong>58˚</span>
+              </li>
+            </ul>
+          </div>
+          <div class="grid col-sm-2">
+            <img src="images/sun-icon.png" class="weather-icons sun-icon" />
+
+            <img src="images/partly-cloudy-icon.png" class="weather-icons" />
+
+            <img src="images/partly-cloudy-icon.png" class="weather-icons" />
+
+            <img src="images/clouds-icon.png" class="weather-icons" />
+
+            <img src="images/partly-cloudy-icon.png" class="weather-icons" />
           </div>
         </div>
+        <footer></footer>
       </div>
-
-      <div class="row">
-        <div class="col-sm-6">
-          <ul>
-            <li class="current-high-low">
-              <strong><span id="current-high"></span>˚ | </strong>
-              <span id="current-low"></span>˚
-            </li>
-            <li class="humidity-wind">
-              Humidity: <span id="humidity"></span>%
-            </li>
-            <li class="humidity-wind">
-              Wind: <span id="wind-speed"></span>m/s
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm-4 forecast-temps">
-          <ul class="text-center">
-            <li class="days-temps">
-              Sun <br />
-              <span class="temps"><strong> 79˚ </strong>| 55˚</span>
-            </li>
-            <li class="days-temps">
-              Mon <br />
-              <span class="temps"><strong> 74˚| </strong>67˚</span>
-            </li>
-            <li class="days-temps">
-              Tue <br />
-              <span class="temps"><strong> 82˚| </strong>62˚</span>
-            </li>
-            <li class="days-temps">
-              Wed <br />
-              <span class="temps"><strong> 64˚| </strong>47˚</span>
-            </li>
-            <li class="days-temps">
-              Thu <br />
-              <span class="temps"><strong> 63˚| </strong>58˚</span>
-            </li>
-          </ul>
-        </div>
-        <div class="grid col-sm-2">
-          <img src="images/sun-icon.png" class="weather-icons sun-icon" />
-
-          <img src="images/partly-cloudy-icon.png" class="weather-icons" />
-
-          <img src="images/partly-cloudy-icon.png" class="weather-icons" />
-
-          <img src="images/clouds-icon.png" class="weather-icons" />
-
-          <img src="images/partly-cloudy-icon.png" class="weather-icons" />
-        </div>
-
-      <footer></footer>
+      <small
+        ><a href="https://github.com/JG3955/Weather-App-Project" target="_blank"
+          >Open-Source Code</a
+        >
+        by Julie Gardner</small
+      >
     </div>
-    <div class="coded-by"><a href="https://github.com/JG3955/Weather-App-Project" target="_blank">Open-Source Code</a> 
-    by Julie Gardner</div>
-    
+
     <script src="src/script.js"></script>
   </body>
 </html>
